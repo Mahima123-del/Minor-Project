@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Now</title>
+    <link rel="stylesheet" href="stylehome.css">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="all">
+    <div id="head">
+        <nav>
+            <a href="#home" class="nav-logo">
+                <img src="images/logo.png" alt="Logo" width="40">
+                <h1 class="logo" style="margin: 0;">&nbsp;ADVENTURE</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" >About Us</a>
+                    <div class="dropdown-content">
+                        <a href="aboutus.html" target="_blank">About</a>
+                        <a href="history.html">History</a>
+                    </div>
+                </li>
+                <a href="add-place.html">Add a Place</a>
+                <li class="dropdown">
+                    <a href="#" >Destination</a>
+                    <div class="dropdown-content">
+                        <a href="/places-added">Places Added By users</a>
+                        <a href="topplaces.html" target="_blank">Top Places</a>
+                        <a href="hotels.html" target="_blank">Hotels</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html" target="_blank">Gallery</a></li>
+                <li><a href="booking.html" target="_blank">Booking</a></li>
+                <li><a href="quiz.html" target="_blank">Quiz</a></li>
+                
+            </ul>
+        </nav>
+        <h1>Journey To</h1>
+        <h1>Explore World</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input" id="search-input">
+            <button type="button" class="search-button" id="search-button">Search</button>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <h1 class="heading">
+            Welcome to Jim Corbett Ramnagar 
+        </h1>
+
+        <h2 id="welcome-username" style="display:none;"></h2>
+
+        <h2 class="topicname">Top Places</h2>
+        <div id="attractions-container" class="grid-container"></div>
+        <div class="grid-container">
+            <div class="box">
+              <img class="right" src="images/garjia.jpg" alt="image">
+            <div class="na"><a href="topplaces.html#topic1" target="_blank"><p>Garjia Devi Temple</p></a></div>
+            
+            </div>
+            <div class="box">
+                <img class="right" src="images/meseum.jpeg" alt="">
+                <div class="na"><a href="topplaces.html#topic1" target="_blank"><p>Jim Corbett Museum</p></a></div> 
+            </div>
+            <div class="box">
+                <img class="right" src="images/dhikala.jpeg" alt="">
+                <div class="na"><a href="topplaces.html#topic1" target="_blank"><p>Dhikala Forest Lodge</p></a></div> 
+            </div>
+            <div class="box">
+                <img class="right" src="images/hanuman dham.jpeg" alt="">
+                <div class="na"><a href="topplaces.html#topic1" target="_blank"><p>Shri Hanuman Dham</p></a></div>  
+            </div>
+            <div class="box"> 
+                <img  class="right" src="images/corbett fall.jpeg" alt="">
+                <div class="na"><a href="topplaces.html#topic1" target="_blank"><p>Corbett fall</p></a></div> 
+            </div>
+        </div>
+
+        <h2 class="topicname">Hotels</h2>
+        <div class="grid-container">
+            <div class="box">
+                <img class="right" src="images/taj.jpeg" alt="image">
+                <div class="na"><a href="#"><p>Taj Corbett Resort & Spa</p></a></div>
+            </div>
+            <div class="box">
+                <img class="right" src="images/corbett.jpeg" alt="image">
+                <div class="na"><a href="#"><p>Corbett Machaan Resort</p></a></div>
+            </div>
+            <div class="box">
+                <img class="right" src="images/tattwaa.jpeg" alt="image">
+                <div class="na"><a href="#"><p>The Tattwaa Corbett Spa</p></a></div>
+            </div>
+            <div class="box">
+                <img class="right" src="images/suman.jpeg" alt="image">
+                <div class="na"><a href="#"><p>Corbett Suman Grand</p></a></div>
+            </div>
+            <div class="box">
+                <img class="right" src="images/vow.jpeg" alt="image">
+                <div class="na"><a href="#"><p>Vow Resort & Spa</p></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+
+    <div class="footer">
+        <div class="foot">
+            <h2>Explore Now</h2>
+            <p class="lines">Discover the best destinations and experiences with our curated travel guides and tips.</p>
+            <p class="lines"> Your journey to unforgettable adventures starts here!</p>
+        </div>
+        <div class="social-icon">
+        <a href="#" class="fa fa-facebook"></a>
+        <span class="divider">/</span>
+        <a href="#" class="fa fa-twitter"></a>
+        <span class="divider">/</span>
+        <a href="#" class="fa fa-instagram"></a>
+        <span class="divider">/</span>
+        <a href="#" class="fa fa-youtube"></a>
+        <span class="divider">/</span>
+        <a href="#" class="fa fa-skype"></a> 
+    </div>
+
+        <div class="footer-links">
+            <a href="#">WORK</a>
+            <a href="#">STORY</a>
+            <a href="#">SERVICES</a>
+            <a href="#">CAREERS</a>
+            <a href="#">CONTACT US</a>
+        </div>
+        
+    </div>
+
+</div>
+
+<script>
+    // Fetch attractions when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('http://localhost:3000/api/attractions')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(attractions => {
+            console.log(attractions); // Process attractions
+        })
+        .catch(error => {
+            console.error('Error fetching attractions:', error);
+        });
+    });
+
+    // Search functionality
+    document.getElementById('search-button').addEventListener('click', function() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        localStorage.setItem('searchQuery', query); // Store the query in local storage
+        window.open('search-results.html?q=' + encodeURIComponent(query), '_blank');
+    });
+
+    // Check if username is stored in localStorage
+    const username = localStorage.getItem('username');
+    if (username) {
+        const welcomeMessage = document.getElementById('welcome-username');
+        welcomeMessage.textContent = `Welcome, ${username}!`;
+        welcomeMessage.style.display = 'block'; // Make the username visible
+    }
+
+</script>
+
+</body>
+</html>

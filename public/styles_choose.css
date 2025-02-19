@@ -1,0 +1,78 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #a8c8e6, #f0f4c3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Deeper shadow for depth */
+    max-width: 450px; /* Set a max width */
+    width: 100%; /* Full width on small screens */
+    margin: 20px;
+    z-index: 1;
+}
+
+/* Heading Styling */
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 15px 0;
+}
+
+/* Button Container Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+/* Button Styling */
+.button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #6a1b9a; /* Rich purple color */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #4a148c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem; /* Smaller heading on small screens */
+    }
+
+    .button {
+        padding: 10px 20px; /* Adjust button padding */
+    }
+}

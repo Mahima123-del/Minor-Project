@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style_search.css">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="all">
+        <div id="head">
+            <nav>
+                <nav>
+                    <a href="#home" class="nav-logo">
+                        <img src="images/logo.png" alt="Logo" width="40">
+                        <h1 class="logo" style="margin: 0;font-size: 28px;">&nbsp;ADVENTURE</h1>
+                    </a>
+                    <a href="home.html" class="nav-logo">Back to Home Page</a>
+                </nav>
+            </nav>
+            <h1>Journey To</h1>
+        <h1>Explore World</h1>~
+        </div>
+
+        <div class="container">
+            <h1 style="color: black;"><u>Search Results</u></h1>
+            <div id="search-results"></div>
+        </div>
+
+        <!--footer-->
+        <div class="footer">
+            <div class="foot">
+                <h2>Explore Now</h2>
+                <p class="lines">Discover the best destinations and experiences with our curated travel guides and tips.</p>
+                <p class="lines"> Your journey to unforgettable adventures starts here!</p>
+            </div>
+            <div class="social-icon">
+                <a href="#" class="fa fa-facebook"></a>
+                <span class="divider">/</span>
+                <a href="#" class="fa fa-twitter"></a>
+                <span class="divider">/</span>
+                <a href="#" class="fa fa-instagram"></a>
+                <span class="divider">/</span>
+                <a href="#" class="fa fa-youtube"></a>
+                <span class="divider">/</span>
+                <a href="#" class="fa fa-skype"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">WORK</a>
+                <a href="#">STORY</a>
+                <a href="#">SERVICES</a>
+                <a href="#">CAREERS</a>
+                <a href="#">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       // Function to get query parameters
+       function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const query = getQueryParameter('q');
+    console.log('Query:', query); // Debugging
+
+    if (query) {
+        // Fetch both attractions and hotels
+        const apiAttractionsUrl = `http://localhost:3001/api/attractions/search?q=${encodeURIComponent(query)}`;
+        const apiHotelsUrl = `http://localhost:3001/api/hotels/search?q=${encodeURIComponent(query)}`;
+
+        Promise.all([
+            fetch(apiAttractionsUrl).then(response => response.json()),
+            fetch(apiHotelsUrl).then(response => response.json())
+        ])
+        .then(([attractions, hotels]) => {
+            console.log('Fetched Attractions:', attractions); // Debugging
+            console.log('Fetched Hotels:', hotels); // Debugging
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            // Display Attractions
+            if (attractions.length > 0) {
+                const attractionsHeading = document.createElement('h2');
+                attractionsHeading.textContent = 'Attractions';
+                attractionsHeading.classList.add('attractions-heading');
+                resultsContainer.appendChild(attractionsHeading);
+                
+                attractions.forEach(attraction => {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('attraction-item');
+                    resultItem.innerHTML = `
+                        <strong>${attraction.name}</strong>: ${attraction.description}
+                        <br>
+                        <img src="${attraction.image}" alt="${attraction.name}" class="result-img">
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML += '<p>No attractions found.</p>';
+            }
+
+            // Display Hotels
+            if (hotels.length > 0) {
+                const hotelsHeading = document.createElement('h2');
+                hotelsHeading.textContent = 'Hotels';
+                hotelsHeading.classList.add('hotels-heading');
+                resultsContainer.appendChild(hotelsHeading);
+
+                hotels.forEach(hotel => {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('hotel-item');
+                    resultItem.innerHTML = `
+                        <strong>${hotel.name}</strong>: ${hotel.description}
+                        <br>
+                        <img src="${hotel.image}" alt="${hotel.name}" class="result-img">
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML += '<p>No hotels found.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '<p>Error fetching data. Please try again later.</p>';
+        });
+    }
+});
+    </script>
+</body>
+</html>

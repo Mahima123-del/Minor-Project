@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramnagar Quiz Game</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #e09, #d0e);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            width: 90%;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #5a67d8;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 1rem;
+            color: #ffffff;
+            background: #5a67d8;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .options button:hover {
+            background: #4c51bf;
+            transform: translateY(-3px);
+        }
+
+        .options button:active {
+            transform: translateY(1px);
+        }
+
+        .score {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #38a169;
+            margin: 20px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #player-name {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        #player-name:focus {
+            outline: none;
+            border-color: #5a67d8;
+            box-shadow: 0 0 8px rgba(90, 103, 216, 0.5);
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background: #3182ce;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #2b6cb0;
+        }
+
+        #leaderboard {
+            margin-top: 20px;
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #leaderboard h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        #leaderboard ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        #leaderboard li {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Ramnagar Trivia Quiz</h1>
+        <div id="quiz">
+            <p class="question">Loading question...</p>
+            <div class="options">
+                <button onclick="selectAnswer(0)">Option 1</button>
+                <button onclick="selectAnswer(1)">Option 2</button>
+                <button onclick="selectAnswer(2)">Option 3</button>
+                <button onclick="selectAnswer(3)">Option 4</button>
+            </div>
+        </div>
+        <div id="end-screen" class="hidden">
+            <p class="score">Your Score: <span id="final-score">0</span></p>
+            <input type="text" id="player-name" placeholder="Enter your name" />
+            <button onclick="saveScore()">Submit Score</button>
+        </div>
+        <div id="leaderboard" class="hidden">
+            <h3>Leaderboard</h3>
+            <ul id="leaderboard-list"></ul>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the most famous animal in Jim Corbett National Park?",
+                options: ["Elephant", "Tiger", "Deer", "Leopard"],
+                correct: 1
+            },
+            {
+                question: "Which river flows through Jim Corbett National Park?",
+                options: ["Ganga", "Yamuna", "Ramganga", "Saryu"],
+                correct: 2
+            },
+            {
+                question: "What year was Jim Corbett National Park established?",
+                options: ["1936", "1950", "1975", "1980"],
+                correct: 0
+            },
+            {
+                question: "What is the local language spoken in Ramnagar?",
+                options: ["Kumaoni", "Hindi", "Garhwali", "Bhojpuri"],
+                correct: 0
+            },
+            {
+                question: "Which of these is a popular activity in Jim Corbett National Park?",
+                options: ["River Rafting", "Tiger Safari", "Trekking", "Rock Climbing"],
+                correct: 1
+            },
+            {
+                question: "What is the main type of vegetation in Jim Corbett National Park?",
+                options: ["Mangroves", "Coniferous Forests", "Deciduous Forests", "Grasslands"],
+                correct: 2
+            },
+            {
+                question: "Who was Jim Corbett National Park named after?",
+                options: ["A British officer", "A local king", "A wildlife photographer", "A hunter-turned-conservationist"],
+                correct: 3
+            },
+            {
+                question: "Which state is Jim Corbett National Park located in?",
+                options: ["Himachal Pradesh", "Uttarakhand", "Rajasthan", "Madhya Pradesh"],
+                correct: 1
+            },
+            {
+                question: "Which bird species is commonly found in Jim Corbett National Park?",
+                options: ["Peacock", "Great Hornbill", "Sparrow", "Kingfisher"],
+                correct: 0
+            },
+            {
+                question: "What is the best time to visit Jim Corbett National Park?",
+                options: ["Monsoon (July-September)", "Winter (November-February)", "Summer (April-June)", "All year round"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        const leaderboard = [];
+
+        function loadQuestion() {
+            const questionElement = document.querySelector(".question");
+            const options = document.querySelectorAll(".options button");
+
+            questionElement.textContent = questions[currentQuestion].question;
+            options.forEach((button, index) => {
+                button.textContent = questions[currentQuestion].options[index];
+            });
+        }
+
+        function selectAnswer(index) {
+            if (index === questions[currentQuestion].correct) {
+                score++;
+            }
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+            document.getElementById("quiz").classList.add("hidden");
+            document.getElementById("end-screen").classList.remove("hidden");
+            document.getElementById("final-score").textContent = score;
+        }
+
+        function saveScore() {
+            const playerName = document.getElementById("player-name").value;
+            if (playerName) {
+                leaderboard.push({ name: playerName, score });
+                leaderboard.sort((a, b) => b.score - a.score);
+                showLeaderboard();
+            }
+        }
+
+        function showLeaderboard() {
+            document.getElementById("end-screen").classList.add("hidden");
+            const leaderboardList = document.getElementById("leaderboard-list");
+            leaderboardList.innerHTML = "";
+            leaderboard.forEach(player => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${player.name}: ${player.score}`;
+                leaderboardList.appendChild(listItem);
+            });
+            document.getElementById("leaderboard").classList.remove("hidden");
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById("leaderboard").classList.add("hidden");
+            document.getElementById("quiz").classList.remove("hidden");
+            loadQuestion();
+        }
+
+        // Initialize the quiz
+        loadQuestion();
+    </script>
+</body>
+</html>

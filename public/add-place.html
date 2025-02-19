@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Place - Explore Now</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div>
+            <nav>
+                <a href="#home" class="nav-logo">
+                    <img src="images/logo.png" alt="Logo" width="40">
+                    <h1 class="logo" style="margin: 0;">&nbsp;ADVENTURE</h1>
+                </a>
+                <a href="home.html" class="nav-logo">Back to Home Page</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1><u>Add a New Place</u></h1>
+        <form action="/submit-place" method="POST" enctype="multipart/form-data">
+            <label for="place-name">Place Name:</label>
+            <input type="text" id="place-name" name="place-name" required><br><br>
+
+            <label for="place-description">Description:</label>
+            <textarea id="place-description" name="place-description" required></textarea><br><br>
+
+            <label for="place-photo">Upload Photo:</label>
+            <input type="file" id="place-photo" name="place-photo" accept="image/*" required><br><br>
+
+            <button type="submit">Add Place</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explore Now | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
