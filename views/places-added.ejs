@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places Added by Users - Explore Now</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div>
+            <nav>
+                <a href="#home" class="nav-logo">
+                    <img src="images/logo.png" alt="Logo" width="40">
+                    <h1 class="logo" style="margin: 0;">&nbsp;ADVENTURE</h1>
+                </a>
+                <a href="home.html" class="nav-logo">Back to Home Page</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1><u>Places Added by Users</u></h1>
+        <div id="places-list">
+            <!-- Dynamically added places from the backend -->
+            <% places.forEach(place => { %>
+                <div class="place">
+                    <h3><%= place.name %></h3>
+                    <p><%= place.description %></p>
+                    <a href="/uploads/<%= place.photo %>"><img src="/uploads/<%= place.photo %>" alt="<%= place.name %>" style="width:300px;"></a>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explore Now | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

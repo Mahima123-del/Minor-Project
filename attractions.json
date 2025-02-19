@@ -1,0 +1,122 @@
+{
+    "attractions": [
+        {
+            "id": 1,
+            "name": " Garjiya Devi Temple",
+            "description": "Garjiya Devi Temple is one of the very old Devi temples in India, which is to be found in the border of a gorgeous village called Girjiya close to Ramnagar in Uttrakhand. Garjiya Devi Mandir also known as the Girija Devi Temple in Ramnagar, have an eye catching attractive vision of situated over a giant rock in Kosi River. Nainital have a well-off cultural tradition and Garjiya Devi Temple Uttarakhand attracts 1000s of devotees yearly because of the divinity that the place has to offer.",
+             "image":"images/photo5.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Corbett Museum",
+            "description": "Corbett Museum is a heritage site dedicated to Sir Edwar James Corbett, popularly known as Jim Corbett, showcasing his life through his work and belongings. Jim Corbett was a British Hunter who turned naturalist and conservationist during the times of British colonisation of India. Mr. Corbett had a strong influence on wildlife preservation that is why the first National Park of India was named after this legendary person. The Museum displays numerous belongings of Mr. Jim Corbett like his general shooting attire and letters.",
+            "image":"images/meseum.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Sitabani Temple",
+            "description": "Located in Sitabani Forest Reserve, Sitabani temple is an ideal location for tourism. The lovely structure of this historical temple makes it a wonderful location for site visitors from all around the world. Jackals, wild boars, barking deers, leopards, tigers, elephants, and king cobras are pleasing sights across the temple complex. This is one of the reasons, this temple is projected as a nationally protected heritage site by ASI.",
+            "image":"images/sitavani.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Wildlife Art Gallery",
+            "description": "A place where you can feel like being in the jungle without going to the jungle and get to know more about corbett and it’s surrounding areas biodiversity through the breath taking pictures of renowned Wildlife Photographer Deep Rajwar. You can also buy the wildlife frames to decor your home & office.",
+            "image":"images/gallery.webp"
+        },
+        {
+            "id": 5,
+            "name": "Dhikala Forest Lodge",
+            "description": "Dhikala forest lodge is run and managed by forest department under Corbett national park, it is located in the core area of Corbett national park. The entry gate for Dhikala is Dhangadi gate. You have to show your permits to forest guards here at this point. Dhikala forest lodge is 30 kms from Dhangadi gate, and it will take around 01 Hr to 01 Hr 15 Mins to cover this distance.",
+            "image":"images/photo3.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "Jim Corbett Tiger Reserve",
+            "description": "The Jim Corbett National Park is a part of the largest Corbett Tiger Reserve; the Project Tiger lies in the Nainital district of Uttarakhand. The Majestic landscape of Corbett is well-known for its tiger richness. Established in the year 1936 as Hailey National Park, Corbett has the glory of being India’s oldest and most prestigious National Park. It is also being honoured as the place where Project Tiger was first launched in the year 1973.",
+            "image":"images/tiger.webp"
+        },
+        {
+            "id": 7,
+            "name": "Kiyari",
+            "description": "Kyari is a Village in Ramnagar Block in Nainital District of Uttarakhand State, India. It is located 40 KM towards west from District head quarters Nainital. 177 KM from State capital Dehradun. Kyari Pin code is 244715 and postal head office is Ramnagar (Nainital).Kyari is surrounded by Kashipur Block towards South , Bajpur Block towards South , Kotabag Block towards East , Jaspur Block towards west .Ramnagar , Bazpur , Kashipur , Jaspur are the near by Cities to Kyari.",
+            "image":"images/kiyari.jpeg"
+        },
+        {
+            "id": 8,
+            "name": "Seeta Bani Forest",
+            "description": "Sitabani Forest Rest House is one of the historical forest rest houses which was built in the year of 1940. Sitabani FRH is located 27 kilometres from Ramnagar city on the Powalgarh Road at an elevation of 515 m perched on a hilltop. You can also take the forest road from Bhandarpani to Sitabani. There is a watchtower in the FRH compound, ideal for bird watchers. The ancient Sitabani Temple, a national monument under the Archeological Survey of India, is close to the FRH which also has a sulfur spring.",
+             "image":"images/sitabani_forest.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Corbett Falls",
+            "description": "Corbett Falls is a beautiful natural waterfall located in the Ramnagar Forest Division of Uttarakhand. The falls is named after the famous British conservationist and author Jim Corbett, who spent much of his life in the region. It was developed as an Eco-tourism site in 1999 and was inaugurated by Mr. I.D. Pandey, IFS, the then Chief Conservator of Forests, Kumaun. It is situated at 27 km from Ramnagar at Ramnagar- Haldwani Road.",
+            "image":"images/corbett fall.jpeg"
+        },
+        {
+            "id": 10,
+            "name": "Crocodile Pool",
+            "description": "Crocodile pool is located on the short cut from Gairal to the other rest houses west of it. It is also a balcony-like natural structure, which looks down upon a pool almost permanently inhabited by crocodiles."
+
+        },
+        {
+            "id": 11,
+            "name": "Kosi Barrage",
+            "description": "Kosi Barrage is a type of dam which is situated in Ramnagar, which is a small town and muncipal board in the Nainital district of Uttarakhand, India. Ramnagar is situated about 65 Km from Nainital, which is known as the headquarter of the district.Ramnagar is the gateway to the Corbett National Park and a famous tourist destination of India.It's 54.25 m long barrage which is constructed across river Kosi at Almora to provide Drinking water to about 1 lac 30 thousand people of Almora city and nearby places.",
+            "image":"images/kosi_barrage.webp"
+        }
+    ],
+    "hotels": [
+        {
+            "id": 1,
+            "name": "Taj Corbett Resort & Spa",
+            "description": "Luxury resort offering stunning views and a tranquil environment.",
+            "image": "images/taj.jpeg"
+            
+        },
+        {
+            "id": 2,
+            "name": "Corbett Machaan Resort",
+            "description": "A resort surrounded by nature, offering various adventure activities.",
+            "image": "images/corbett.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "The Tattwaa Corbett Spa",
+            "description": "A spa resort focusing on wellness and relaxation.",
+            "image": "images/tattwaa.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Corbett Suman Grand",
+            "description": "A comfortable hotel with great amenities for families and groups.",
+            "image": "images/suman.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "Vow Resort & Spa",
+            "description": "A resort providing a unique blend of luxury and nature.",
+            "image": "images/vow.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "Seven Corbett Resort",
+            "description": "Whenever anyone visits the Jim Corbett National Park, they always try finding a luxurious Jim Corbett Resort which can be a perfect example of comfort and elegance in the wilderness.",
+            "image": "images/seven.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Corbett Nirvana Resort",
+            "description": "Corbett Nirvana Resort is a blissful cocoon amidst verdant nature providing an undulating view of the scenic mountain ranges, built with highly equipped and elegant furnishings to ensure your peaceful stay. The Resort is located in the heart of Jim Corbett National Park, one of India’s most popular wildlife destinations.",
+            "image": "images/nirvana.jpg"
+        },
+        {
+            "id": 8,
+            "name": "The Rangers Reserve",
+            "description": "The Rangers Reserve was created on a virgin hill where nature still exists as it did for centuries. Every care was taken to maintain ecology by not cutting even a single tree and enforcing a seamless blend of design, luxury and topography, so that man could view wonders of the wild exactly the way nature created it.",
+            "image": "images/rangers.jpg"
+        }
+
+    ]
+}
