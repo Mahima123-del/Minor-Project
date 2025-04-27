@@ -1,0 +1,122 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('images/mount.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding: 0 50px;
+}
+
+.login-box {
+    line-height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    width: 600px;
+    height: 600px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 35px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 24px;
+}
+
+.input-group input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    line-height: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+
+}
+ 
+.remember-me label {
+    margin-left: -220px; /* Remove any left margin to bring the text closer to the checkbox */
+}
+
+
+
+.remember-me input {
+    margin-right: 3px;
+    margin-left: -70px;
+    justify-content: space-between;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Center the sign-up text */
+.sign-up-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Style the sign-up link */
+.sign-up-link {
+    color: #007BFF; /* Change to your preferred color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sign-up-link:hover {
+    text-decoration: underline;
+}
+
+.quote-box {
+    color: white;
+    max-width: 500px;
+}
+
+.quote-box h1 {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.social-icons a {
+    margin-right: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+}
+ 
+

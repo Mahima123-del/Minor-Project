@@ -1,16 +1,139 @@
+/* Basic CSS for Add a Place and Places Added pages */
 body {
-    display: flex;
-    justify-content: center; /* Centers the container horizontally */
-    align-items: center; /* Centers the container vertically */
-    min-height: 100vh; /* Ensures the body takes up the full height of the viewport */
-    margin: 0; /* Removes default margin */
-    background-color: #f0f0f0; /* Optional: adds a background color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.container {
-    width: 60%; /* Adjust this value to control the width of the content */
-    background-color: #fff; /* Optional: adds a background color to the container */
+nav {
+    background-color: rgb(0, 204, 255);
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  
+  .nav-logo {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+  }
+
+  h1{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 70px;
+  }
+
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+main {
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect */
-    text-align: center; /* Centers the text inside the container */
+    background-color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+#places-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.place {
+    width: 30%;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.place h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.place p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.place img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+footer{
+    margin-top: 60px;
 }

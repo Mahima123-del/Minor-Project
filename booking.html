@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="stylebooking.css"> <!-- Add your CSS file for styling -->
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <div>
+        <nav>
+            <a href="#home" class="nav-logo">
+                <img src="images/logo.png" alt="Logo" width="40">
+                <h1 class="logo" style="margin: 0;">&nbsp;ADVENTURE</h1>
+            </a>
+            <a href="home.html" class="nav-logo">Back to Home Page</a>
+        </nav>
+    </div>
+    <h1>Book Your Hotel</h1>
+    <form id="booking-form" action="/book-hotel" method="POST">
+        <label for="guest-name">Guest Name:</label>
+        <input type="text" id="guest-name" name="guestName" required>
+    
+        <label for="check-in">Check-In Date:</label>
+        <input type="date" id="check-in" name="checkIn" required>
+    
+        <label for="check-out">Check-Out Date:</label>
+        <input type="date" id="check-out" name="checkOut" required>
+    
+        <label for="room-type">Room Type:</label>
+        <select id="room-type" name="roomType">
+            <option value="standard">Standard</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="suite">Suite</option>
+        </select>
+    
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" name="guests" min="1" required>
+    
+        <h2>Payment Details</h2>
+    
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="cardNumber" pattern="\d{16}" placeholder="Enter 16-digit card number" required>
+    
+        <label for="card-expiry">Expiration Date:</label>
+        <input type="month" id="card-expiry" name="cardExpiry" required>
+    
+        <label for="card-cvv">CVV:</label>
+        <input type="text" id="card-cvv" name="cardCVV" pattern="\d{3}" placeholder="Enter 3-digit CVV" required>
+    
+        <button type="submit">Submit Booking</button>
+    </form>
+    
+    <script>
+        // Handle booking form submission
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const bookingData = {
+                guestName: document.getElementById('guest-name').value,
+                checkIn: document.getElementById('check-in').value,
+                checkOut: document.getElementById('check-out').value,
+                roomType: document.getElementById('room-type').value,
+                guests: document.getElementById('guests').value,
+                payment: {
+                    cardNumber: document.getElementById('card-number').value,
+                    cardExpiry: document.getElementById('card-expiry').value,
+                    cardCVV: document.getElementById('card-cvv').value
+                }
+            };
+
+            // Send bookingData to the backend
+            fetch('http://localhost:3000/book-hotel', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(bookingData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Booking and payment successful!');
+            })
+            .catch(error => {
+                console.error('Error booking hotel:', error);
+                alert('Error processing your booking and payment. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

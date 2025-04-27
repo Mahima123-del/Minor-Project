@@ -1,0 +1,119 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Main font for body */
+    background: linear-gradient(to right, #a8c8e6, #f0f4c3); /* Softer gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Allow absolute positioning for background */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.background {
+    background-image: url('travel-background.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5; /* Slight transparency */
+    z-index: 0; /* Behind other elements */
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Deeper shadow for depth */
+    max-width: 450px; /* Increased max width for better layout */
+    margin: 0 20px; /* Margin for smaller screens */
+    position: relative; /* Positioning context for z-index */
+    z-index: 1; /* Above background */
+}
+
+h1 {
+    font-family: 'Playfair Display', serif; /* New font family for the title */
+    color: #333;
+    font-size: 2.5rem; /* Larger heading */
+    margin-bottom: 20px; /* Space below heading */
+    text-transform: uppercase; /* Uppercase for style */
+    letter-spacing: 1px; /* Spacing between letters */
+    animation: fadeIn 1s; /* Fade-in effect */
+}
+
+p {
+    color: #555;
+    font-size: 1.1rem; /* Slightly larger text for better readability */
+    margin: 10px 0; /* Space above and below paragraphs */
+    animation: fadeIn 1.5s; /* Fade-in effect with delay */
+}
+
+.button-container,
+.login-signup {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px; /* Increased padding for a better look */
+    background-color: #6a1b9a; /* Rich purple color */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px; /* Rounded button edges */
+    font-size: 1rem; /* Font size for buttons */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Added transition effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow for depth */
+    position: relative; /* Positioning context for icon */
+}
+
+.button:hover {
+    background-color: #4a148c; /* Darker purple on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.icon {
+    width: 20px; /* Icon size */
+    height: 20px; /* Icon size */
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon with text */
+}
+
+.info {
+    margin-top: 30px; /* Space above the info section */
+    font-size: 1rem;
+    color: #555;
+}
+
+.info p {
+    margin: 5px 0; /* Reduced margin for info paragraphs */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem; /* Smaller heading on small screens */
+    }
+
+    .button {
+        padding: 10px 20px; /* Adjust button padding */
+    }
+}
